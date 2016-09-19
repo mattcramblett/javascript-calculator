@@ -1,0 +1,169 @@
+@charset "utf-8";
+@import "normalize";
+
+$blue1: #046D8B;
+$blue2: #309292;
+$blue3: #2FB8AC;
+$green1: #93A42A;
+$yellow1: #ECBE13;
+$yellow2: #BD970F;
+$gray1: #808080;
+$gray2: #C0C0C0;
+
+* {	
+	font: bold 32px Arial, sans-serif;
+}
+
+html {
+	background: radial-gradient(circle, #fff 20%, #ccc);
+}
+
+#calculator {
+	/* width of the calculator body */
+	width: 340px;
+	border-radius: 15px;
+
+/* center it */
+	margin: 120px auto;
+	padding: 20px;
+	
+	background: linear-gradient($blue1, $blue2);
+	box-shadow:4px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* display portion */
+
+/* history box formatting */
+
+.history{
+	height: 80px;
+	width: 320px;
+	
+	float: left;
+	position:relative;
+	padding: 5px 10px;
+	
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	box-shadow: inset 0px 4px rgba(0, 0, 0, 0.2);
+
+	text-align: left;
+	overflow-x: auto;
+	overflow-y: auto;
+	margin-bottom: 5px;
+}
+
+/* history box element formatting */
+
+.history-element{
+	font-size: 24px;
+	color: $gray2;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+	letter-spacing: 1px;
+}
+
+.history-element:hover{
+    cursor: pointer;
+    color: $yellow1;
+}
+
+.history-element:active{
+    color: $yellow2;
+}
+
+/* input screen formatting */
+
+.screen{
+	height: 80px;
+	width: 320px;
+	
+	float: left;
+	position:relative;
+	padding: 0 10px;
+	
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	box-shadow: inset 0px 4px rgba(0, 0, 0, 0.2);
+	
+	/* text in box at top */
+	font-size: 26px;
+	line-height: 40px;
+	color: white;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+	text-align: right;
+	letter-spacing: 1px;
+	overflow-x: auto;
+	overflow-y: auto;
+	margin-bottom: 20px;
+}
+
+/* keyboard section */
+.bottom{
+	padding-top: 100px;    
+}
+
+.keys{
+	user-select: none;
+	position: relative;
+	text-align: justify;
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+
+}
+
+/* button formatting */
+.keys span{
+  -moz-user-select: none; 
+	user-select: none;
+	cursor: pointer;
+	display: table-cell;
+	position: relative;
+	padding: 1px 15px;
+		background: white;
+	border: 3px solid $blue1;
+	border-radius: 10px;
+	box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+	margin-top:7px;
+		color: #888;
+	line-height: 40px;
+	text-align: center;
+	transition: all .2s ease;
+}
+
+.keys span.operator {
+	color: $blue1;
+	background: $blue3;
+	text-align: center;
+}
+
+.keys span.clear{
+	background-color: $yellow1;
+}
+
+.keys span.equal {
+	background: $yellow1;
+	box-shadow: 0px 4px #555;
+}
+
+.keys span:not(.disabled):hover {
+	background: $blue2;
+	color: white;
+}
+
+/* slides down when pressed */
+.keys span:not(.disabled):active {
+	box-shadow: 0px 0px #6b54d3;
+	top: 4px;
+}
+
+.keys span.selected {
+	background: $blue2;
+	color: white;
+	box-shadow: 0px 0px #6b54d3;
+	top: 4px;
+}
+
+.keys span.disabled {
+	background: $gray1;
+}
